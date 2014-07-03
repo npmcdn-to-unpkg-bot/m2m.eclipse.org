@@ -2973,6 +2973,10 @@ ul.icons li .icon-large:before {
   content: "\f200";
 }
 
+.icon-file-text-o:before {
+  content: "\f0f6";
+}
+
 .dropup,
 .dropdown {
   position: relative;

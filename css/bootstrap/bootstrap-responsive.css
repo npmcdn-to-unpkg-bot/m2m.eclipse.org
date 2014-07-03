@@ -359,6 +359,22 @@ footer ul li.pull-right {
   background: #f6f6f6;
 }
 
+/* Project list: resources.html */
+.articles .itembox h3,
+.articles .itembox p {
+  padding: 0 10px;
+}
+
+.articles .itembox h3 {
+  font-size: 21px;
+}
+
+.articles .itembox p {
+  padding-bottom: 50px;
+  font-size: 15px;
+  color: #7c2c90;
+}
+
 /* Project list: community.html */
 .project-list .itembox h3,
 .project-list .itembox p {
