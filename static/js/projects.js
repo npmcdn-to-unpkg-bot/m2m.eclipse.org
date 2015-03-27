@@ -5,15 +5,19 @@
  */
 
 
-var projectsAssociation = 
-{
-    "standards": ["iot-paho", "iot-californium", "iot-om2m", "iot-mosquitto", "iot-moquette", "iot-wakaama", "iot-leshan", "iot-concierge"],
+var projectsAssociation = {
+    "Standards": ["iot.paho", "iot.paho.incubator", "iot.californium", "iot.om2m", "iot.mosquitto", "iot.moquette", "iot.wakaama", "iot.leshan", "iot.concierge", "iot.risev2g", "iot.4diac"],
 
-    "horizontal": ["iot-om2m", "iot-krikkit", "iot-kura", "iot-mihini", "iot-ponte"],
+    "Frameworks": ["iot.om2m", "iot.krikkit", "iot.kura", "iot.mihini", "iot.ponte", "iot.smarthome", "iot.eclipsescada", "iot.4diac"],
 
-    "industry": ["iot-smarthome", "iot-eclipsescada"]
+    // rest is "others" (Ignite, ...)
 };
 
+
+var projectAliases = {
+    "iot.californium": "Californium",
+    "iot.4diac": "4DIAC"
+};
 
 
 (function($, window, document) {
@@ -57,10 +61,11 @@ var projectsAssociation =
             cache: true,
             success: function(data) {
 
+                var projectBoxes = {};
+
                 var val = 20;
                 $('.progress-bar').css('width', val + '%').attr('aria-valuenow', val);
 
-                var output = "<div class=\"all-projects row-fluid\">";
                 var i = 0;
 
                 $.each(data, function(key, value) {
@@ -71,6 +76,10 @@ var projectsAssociation =
 
 
                     // Clean up and remove HTML.
+                    if (value.id in projectAliases) {
+                        value.name = projectAliases[value.id];
+                    }
+
                     var title = stringJanitor(value.name);
                     var id = stringJanitor(value.id);
                     var desc = stringJanitor(value.description, {
@@ -85,36 +94,83 @@ var projectsAssociation =
                     if (id == 'rt.ecf' || id == 'tools.sequoyah.mtj' || id == "technology.koneki")
                         return true;
 
-                    output += "<div class=\"col-md-4 col-sm-6 itembox\"" + style + " id =\"" + id.replace('.', '-') +"\">";
+                    var boxOutput = "";
+
+                    boxOutput += "<div class=\"col-md-4 col-sm-6 itembox\"" + style + " id =\"" + id.replace('.', '-') + "\">";
                     if (validateUrl(logo) && showlogo === true) {
-                        output += "<img class =\"logo\" alt=\"" + title + " logo\" src=\"" + logo + "\">";
+                        boxOutput += "<img class =\"logo\" alt=\"" + title + " logo\" src=\"" + logo + "\">";
                     } else {
-                        output += "<h1 class=\"purple\">" + title + "</h1>";
+                        boxOutput += "<h3 class=\"purple\">" + title + "</h3>";
                     }
 
-                    output += "<p>" + desc + "</p>";
+                    boxOutput += "<p>" + desc + "</p>";
 
                     if (!validateUrl(link)) {
                         link = "http://projects.eclipse.org/projects/" + id;
                     }
 
 
-                    output += "<a href=\"" + link + "\" class=\"readmore\" target=\"_blank\">Read more</i></a>";
-                    output += "<a href=\"https://projects.eclipse.org/projects/" + id + "/downloads\" class=\"download\" target=\"_blank\">Download</a>";
+                    boxOutput += "<a href=\"" + link + "\" class=\"readmore\" target=\"_blank\">Read more</i></a>";
+                    boxOutput += "<a href=\"https://projects.eclipse.org/projects/" + id + "/downloads\" class=\"download\" target=\"_blank\">Download</a>";
 
-                    output += "</div>";
+                    boxOutput += "</div>";
+
+                    projectBoxes[id] = boxOutput;
+
                     i++;
                 });
 
                 $("#update-project").empty();
                 $("#update-project").removeClass("loading");
 
+                var output = "";
+
+                for (var k in projectsAssociation) {
+                    output += "<div class=\"container\">";
+                    output += "<h1 class=\"purple\">" + k + "</h1>";
+                    output += "<div class=\"projects-row row-fluid\">";
+
+                    projectsAssociation[k].forEach(function(elem) {
+                        output += projectBoxes[elem];
+                    });
+
+                    output += "</div>"; // end row-fluid
+                    output += "</div>"; // end container
+                }
+
+                // and now ... "The Others"!
+                output += "<div class=\"container\">";
+                output += "<h1 class=\"purple\">Others</h1>";
+                output += "<div class=\"projects-row row-fluid\">";
+
+                for (var k in projectBoxes) {
+                    var found = false;
+                    // is the project in any other category?
+                    for (var kk in projectsAssociation) {
+                        projectsAssociation[kk].forEach(function(elem) {
+                            if (elem == k) {
+                                found = true;
+                                return;
+                            }
+                        });
+                    }
+
+                    if (!found) {
+                        console.log(k);
+                        output += projectBoxes[k];
+                    }
+
+                }
+
+                output += "</div>"; // end row-fluid
+                output += "</div>"; // end container
+
 
                 // Insert html and resize the boxes.
                 $("#update-project").append('</div>' + output);
                 resize();
 
-                $('.all-projects').shuffle();
+                $('.projects-row').shuffle();
 
                 // enable filter buttons
                 $('.btn-projects').prop('disabled', false);
@@ -162,9 +218,13 @@ var projectsAssociation =
 
         // Shorten the string.
         if (settings.cut) {
-            var cutat = text.lastIndexOf(' ', settings.end);
-            if (cutat !== -1) {
-                text = text.substring(settings.start, cutat) + settings.ellipsis;
+            if (text.length < settings.end) {
+                return text;
+            } else {
+                var cutat = text.lastIndexOf(' ', settings.end);
+                if (cutat !== -1) {
+                    text = text.substring(settings.start, cutat) + settings.ellipsis;
+                }
             }
         }
         return text;
