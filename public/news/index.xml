@@ -5,8 +5,18 @@
     <link>http://iot.eclipse.org/news/</link>
     <description>Recent content in News on Eclipse IoT</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 19 Mar 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://iot.eclipse.org/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Open IoT Challenge – Final submissions</title>
+      <link>http://iot.eclipse.org/news/2015-03-26-open-iot-final-entries/</link>
+      <pubDate>Thu, 26 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://iot.eclipse.org/news/2015-03-26-open-iot-final-entries/</guid>
+      <description>&lt;p&gt;The Open IoT challenge ended earlier this week, and it was pretty exciting to see the final submissions coming in the form of blog posts and video during the last hours before the deadline…&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Open IoT Challenge projects are way cool</title>

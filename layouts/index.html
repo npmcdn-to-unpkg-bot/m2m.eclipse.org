@@ -311,9 +311,9 @@
               {{ range where .Data.Pages ".Type" "member" }}
 
               <div class="col-md-4 col-xs-6" style="padding:20px 60px; display:none;">
-                <div style="height: 120px; display:table-cell; vertical-align:middle;">
+                <div style="height: 120px; line-height: 120px; ">
                   <a href="http://eclipse.org/membership/showMember.php?member_id={{ .Params.member_id }}" target="_blank">
-                    <img src="/assets/images/members/logo-{{ .Params.logo }}.png" class="img-responsive" alt="logo-{{ .Title}}" style="max-height:110px">
+                    <img src="/assets/images/members/logo-{{ .Params.logo }}.png" class="img-responsive" alt="logo-{{ .Title}}" style="max-height:110px; display:inline-block; vertical-align:middle;">
                   </a>
                 </div>
               </div>
@@ -330,7 +330,7 @@
           </div>
           <section class="working-group col-md-4 line-divider-left">
             <h1 class="purple">Working Group</h1>
-            <p>The <strong>Eclipse IoT Working Group</strong> is an industry collaboration of companies who invest and promote an open source community for IoT. <a href="/working-group"><strong>Join Us</strong></a>!
+            <p>The <strong>Eclipse IoT Working Group</strong> is an industry collaboration of companies who invest and promote an open source community for IoT. <a href="/ecosystem"><strong>Join Us</strong></a>!
             </p>
             <p><a href="/working-group" class="btn btn-primary">Ecosystem</a>
             </p>
