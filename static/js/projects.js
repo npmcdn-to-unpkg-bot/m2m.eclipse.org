@@ -33,27 +33,6 @@ var projectAliases = {
         //     return false;
         // });
 
-        // update number of projects:
-        for (var k in projectsAssociation) {
-            $('#' + k + '.btn-projects > .badge').text(projectsAssociation[k].length);
-        }
-
-
-        $('.btn-projects').on('click', function() {
-            var $btn = $(this);
-            //            window.alert('bx');
-            $btn.button('toggle');
-
-
-            projectsAssociation[$btn.attr('id')].forEach(function(elem) {
-                $('#' + elem).toggleClass($btn.attr('id'), $btn.is(".active"));
-            });
-
-            console.log($btn.attr('id'));
-
-
-        })
-
         $.ajax({
             type: "GET",
             url: "//projects.eclipse.org/jsonp/technology/Internet%20of%20Things",
@@ -171,10 +150,6 @@ var projectAliases = {
                 resize();
 
                 $('.projects-row').shuffle();
-
-                // enable filter buttons
-                $('.btn-projects').prop('disabled', false);
-
             },
         });
 
