@@ -112,7 +112,7 @@
         <div class="lead">
           <p>The IoT Working Group is supporting open standards for the Internet of Things.</p>
           <p>
-            We provide open source implementations for IoT protocols such as MQTT, LwM2M, CoAP.
+            We provide open source implementations for IoT protocols such as <a href="#coap">CoAP</a>, <a href="#etsi-smartm2m">ETSI SmartM2M</a>, <a href="#mqtt">MQTT</a> or <a href="#oma-lwm2m">LwM2M</a>.
           </p>
 
         </div>
@@ -148,6 +148,62 @@
 
     <section class="second">
       <div class="container">
+
+        <h1 id="coap" class="purple">CoAP</h1>
+
+        <p>CoAP (Constrained Application Protocol) is a protocol specialized for use with constrained nodes and networks.</p>
+
+        <p>It implements the REST architectural style, it can be transparently mapped to HTTP. However, CoAP also provides features that go beyond HTTP such as native push notifications and group communication.</p>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h2>
+                    <i class="icon-forward"></i> Download CoAP runtime
+                </h2>
+
+            <p>
+              The <a href="http://www.eclipse.org/californium/" target="_blank">Californium project</a> provides a Java implementation of the CoAP protocol, including support for the DTLS security layer. The source code of Californium is available from the <a href="http://www.eclipse.org/californium">project webpage</a>, and is also available from Maven Central.</p>
+              
+
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h2>
+                    <i class="icon-forward"></i> Sandbox CoAP Server
+                </h2>
+
+            <p>
+              We provide a <a href="sandbox.html#coap">sandbox server</a> that exposes some testing resources over CoAP. You can use it to test your CoAP communication scenarios.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="third">
+      <div class="container">
+
+        <h1 id="etsi-smartm2m" class="purple">ETSI SmartM2M</h1>
+
+        <p>ETSI SmartM2M provides specifications for M2M services and applications, and particularly focuses on aspects of the Internet of Things (IoT) and Smart Cities.</p>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h2>
+                    <i class="icon-forward"></i> Download ETSI SmartM2M runtime
+                </h2>
+
+                <p>     The <a href="http://www.eclipse.org/om2m/" target="_blank">OM2M project</a> provides a Java implementation of the ETSI SmartM2M standard. It provides a horizontal M2M service platform for developing services independently of the underlying network, with the aim to facilitate the deployment of vertical applications and heterogeneous devices. The source code of OM2M is available from the <a href="http://www.eclipse.org/om2m">project webpage</a>.</p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="second">
+<div class="container">
 
         <h1 id="mqtt" class="purple">MQTT</h1>
 
@@ -192,40 +248,6 @@
     <section class="third">
       <div class="container">
 
-        <h1 id="coap" class="purple">CoAP</h1>
-
-        <p>CoAP (Constrained Application Protocol) is a protocol specialized for use with constrained nodes and networks.</p>
-
-        <p>It implements the REST architectural style, it can be transparently mapped to HTTP. However, CoAP also provides features that go beyond HTTP such as native push notifications and group communication.</p>
-
-        <div class="row">
-          <div class="col-md-6">
-            <h2>
-                    <i class="icon-forward"></i> Download CoAP runtime
-                </h2>
-
-            <p>
-              The <a href="http://www.eclipse.org/californium/" target="_blank">Californium project</a> provides a Java implementation of the CoAP protocol, including support for the DTLS security layer. The source code of Californium is available from the <a href="http://www.eclipse.org/californium">project webpage</a>, and is also available from Maven Central.</p>
-              
-
-            </p>
-          </div>
-          <div class="col-md-6">
-            <h2>
-                    <i class="icon-forward"></i> Sandbox CoAP Server
-                </h2>
-
-            <p>
-              We provide a <a href="sandbox.html#coap">sandbox server</a> that exposes some testing resources over CoAP. You can use it to test your CoAP communication scenarios.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="second">
-      <div class="container">
-
         <h1 id="oma-lwm2m" class="purple">OMA LightweightM2M</h1>
 
         <p>
@@ -262,27 +284,6 @@
         </div>
       </div>
 
-    </section>
-
-    <section class="third">
-      <div class="container">
-
-        <h1 id="oma-lwm2m" class="purple">ETSI SmartM2M</h1>
-
-        <p>ETSI SmartM2M provides specifications for M2M services and applications, and particularly focuses on aspects of the Internet of Things (IoT) and Smart Cities.</p>
-
-        <div class="row">
-          <div class="col-md-6">
-            <h2>
-                    <i class="icon-forward"></i> Download ETSI SmartM2M runtime
-                </h2>
-
-                <p>     The <a href="http://www.eclipse.org/om2m/" target="_blank">OM2M project</a> provides a Java implementation of the ETSI SmartM2M standard. It provides a horizontal M2M service platform for developing services independently of the underlying network, with the aim to facilitate the deployment of vertical applications and heterogeneous devices. The source code of OM2M is available from the <a href="http://www.eclipse.org/om2m">project webpage</a>.</p>
-
-          </div>
-        </div>
-
-      </div>
     </section>
 
     <div id="contact-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="contact-label" aria-hidden="true" style="display: none;"></div>
