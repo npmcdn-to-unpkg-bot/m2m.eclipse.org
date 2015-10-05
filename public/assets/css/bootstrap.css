@@ -50,6 +50,10 @@ a.btn.btn-primary {
   header nav ul.navbar-nav li ul.dropdown-menu:after {
     top: 35px !important; } }
 
+.dropdown-header {
+  padding: 3px 5px !important;
+  color: #6eb553 !important; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -1709,19 +1713,19 @@ textarea.input-lg, select[multiple].input-lg {
 
 .btn-info {
   color: white;
-  background-color: #5bc0de;
-  border-color: #46bada; }
+  background-color: #6eb553;
+  border-color: #63a748; }
   .btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
     color: white;
-    background-color: #1f809a;
-    border-color: #1f829b; }
+    background-color: #385f29;
+    border-color: #3a6029; }
   .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
     background-image: none; }
   .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info.focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
-    background-color: #5bc0de;
-    border-color: #46bada; }
+    background-color: #6eb553;
+    border-color: #63a748; }
   .btn-info .badge {
-    color: #5bc0de;
+    color: #6eb553;
     background-color: white; }
 
 .btn-warning {
@@ -2809,9 +2813,9 @@ a.label:hover, a.label:focus {
     background-color: #469d44; }
 
 .label-info {
-  background-color: #5bc0de; }
+  background-color: #6eb553; }
   .label-info[href]:hover, .label-info[href]:focus {
-    background-color: #31b2d5; }
+    background-color: #589540; }
 
 .label-warning {
   background-color: #f0ad4e; }
@@ -3025,7 +3029,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-info {
-  background-color: #5bc0de; }
+  background-color: #6eb553; }
   .progress-striped .progress-bar-info {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -4180,7 +4184,7 @@ header {
         position: relative; }
         header nav ul.navbar-nav li a {
           color: whitesmoke;
-          padding: 10px 15px; }
+          padding: 10px 20px; }
           @media (max-width: 1199px) {
             header nav ul.navbar-nav li a {
               padding: 10px 7px;
@@ -4194,11 +4198,11 @@ header {
           margin-top: 10px;
           left: -55px; }
           .homepage header nav ul.navbar-nav li ul.dropdown-menu {
-            background-color: rgba(0, 0, 0, 0.5); }
+            background-color: rgba(0, 0, 0, 0.8); }
           header nav ul.navbar-nav li ul.dropdown-menu li {
             text-transform: none; }
             header nav ul.navbar-nav li ul.dropdown-menu li a {
-              padding: 20px;
+              padding: 8px 10px 8px 15px;
               -webkit-transition: ;
               -o-transition: ;
               transition: ; }
@@ -4489,6 +4493,73 @@ main.main {
       color: whitesmoke;
       padding: 40px 0;
       margin: 0; }
+  main.main #hw-products {
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: white; }
+  main.main #hw-intro {
+    padding-left: 2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: #58595b; }
+    main.main #hw-intro img {
+      max-height: 180px; }
+  main.main .product {
+    border-right: solid #f2f2f3 1px; }
+    main.main .product .product_img {
+      padding-bottom: 1em; }
+    main.main .product .product_name {
+      font-size: 1.2em;
+      font-weight: 700; }
+    main.main .product .product_desc {
+      text-align: justify; }
+    main.main .product .product_compat_list {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-top: 0.5em;
+      border-top: solid #f2f2f3 1px;
+      font-weight: 700; }
+      main.main .product .product_compat_list ul {
+        padding-left: 0px;
+        font-weight: normal; }
+        main.main .product .product_compat_list ul li {
+          display: inline-block;
+          list-style: none;
+          text-indent: -1000em;
+          height: 32px;
+          margin: 4px 8px 12px 4px;
+          background-repeat: no-repeat;
+          background-size: contain; }
+          main.main .product .product_compat_list ul li.californium {
+            background-image: url(/assets/images/projects/logo-californium.png);
+            width: 32px; }
+          main.main .product .product_compat_list ul li.eclipsescada {
+            background-image: url(/assets/images/projects/logo-eclipsescada.png);
+            width: 169.33333px; }
+          main.main .product .product_compat_list ul li.kura {
+            background-image: url(/assets/images/projects/logo-kura.png);
+            width: 107.33333px; }
+          main.main .product .product_compat_list ul li.mosquitto {
+            background-image: url(/assets/images/projects/logo-mosquitto.png);
+            width: 46.66667px; }
+          main.main .product .product_compat_list ul li.smarthome {
+            background-image: url(/assets/images/projects/logo-smarthome.png);
+            width: 107.33333px; }
+          main.main .product .product_compat_list ul li.om2m {
+            background-image: url(/assets/images/projects/logo-om2m.png);
+            width: 105.33333px; }
+          main.main .product .product_compat_list ul li.paho {
+            background-image: url(/assets/images/projects/logo-paho.png);
+            width: 102.66667px; }
+          main.main .product .product_compat_list ul li.smarthome {
+            background-image: url(/assets/images/projects/logo-smarthome.png);
+            width: 175.33333px; }
+          main.main .product .product_compat_list ul li.concierge {
+            background-image: url(/assets/images/projects/logo-concierge.png);
+            width: 96.66667px; }
+    main.main .product .product_buyit {
+      margin-top: 2em; }
 
 footer {
   background-image: url(../images/footer-bg.jpg);

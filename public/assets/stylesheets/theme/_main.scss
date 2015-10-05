@@ -379,4 +379,122 @@ main.main {
             }
         }
     }
+
+    // hw-catalog page 
+    #hw-products {
+        margin-top: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: white;
+    }
+
+    #hw-intro {
+        padding-left:2em; 
+        font-size:1.5em;
+        line-height: 1.5em;
+        color: $gray;
+
+        img {
+            max-height: 180px;
+        }
+    }
+
+    .product {
+        border-right: solid lighten($gray,60%) 1px;
+
+        .product_img {
+            padding-bottom: 1em;
+        }
+
+        .product_name {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .product_desc {
+            text-align: justify; 
+        }
+
+        .product_compat_list {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding-top: .5em;
+
+            border-top: solid lighten($gray,60%) 1px;
+            font-weight: 700;
+
+            ul {
+                padding-left:0px;
+                font-weight: normal;
+
+                li {
+                    //background-color: red; width: 64px;
+                    display: inline-block;
+                    list-style: none;
+                    text-indent: -1000em;
+                    height: 32px; 
+                    margin: 4px 8px 12px 4px;
+
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                    &.californium {
+                        background-image: url(/assets/images/projects/logo-californium.png);
+                        width: 32px;
+                    }
+
+                    &.eclipsescada {
+                        background-image: url(/assets/images/projects/logo-eclipsescada.png);
+                        width: 254px * 32/48;
+                    }
+
+                    &.kura {
+                        background-image: url(/assets/images/projects/logo-kura.png);
+                        width: 161px * 32/48;
+                    }
+
+                    &.mosquitto {
+                        background-image: url(/assets/images/projects/logo-mosquitto.png);
+                        width: 70px * 32/48;
+                    }
+
+                    &.smarthome {
+                        background-image: url(/assets/images/projects/logo-smarthome.png);
+                        width: 161px * 32/48;
+                    }
+
+                    &.om2m {
+                        background-image: url(/assets/images/projects/logo-om2m.png);
+                        width: 158px * 32/48;
+                    }
+
+                    &.paho {
+                        background-image: url(/assets/images/projects/logo-paho.png);
+                        width: 154px * 32/48;
+                    }
+
+                    &.smarthome {
+                        background-image: url(/assets/images/projects/logo-smarthome.png);
+                        width: 263px * 32/48;
+                    }
+
+                    &.concierge {
+                        background-image: url(/assets/images/projects/logo-concierge.png);
+                        width: 145px * 32/48;
+                    }
+
+
+
+                }
+            }
+        }
+
+        .product_buyit {
+            margin-top: 2em;
+        }
+
+    }
+
+
+
 }
