@@ -99,7 +99,7 @@
     s.parentNode.insertBefore(po, s);
   })();
   </script>
-  <main class="main">
+  <main class="main hardware-page">
     <section class="first">
       <div class="container">
         <div class="row" id="hw-intro">
@@ -119,20 +119,29 @@
 
           {{ range where .Site.Pages.ByTitle ".Type" "hardware" }} 
           <div class="col-md-4 product grid-item">
-            <a href="http://placehold.it/600?text={{ .Title }}" data-lightbox="image-1" data-title="{{ .Title }}">
               <div class="product_img">
-                <img class="img-responsive center-block" src="http://placehold.it/250?text={{ .Title }}">
+                <a href="http://placehold.it/600?text={{ .Title }}" data-lightbox="image-1" data-title="{{ .Title }}">
+                  <img class="img-responsive center-block" src="http://placehold.it/250?text={{ .Title }}">
+                  
+                  <div class="center-block zoom">
+                    <span class="icon-search" aria-hidden="true"></span>
+                  </div>
                 
-                <div class="center-block zoom">
-                  <span class="icon-search" aria-hidden="true"></span>
-                </div>
-              
-                <div class="center-block member_logo {{ .Params.provider }}"></div>
-              </div>
-            </a>
-
+                  <div class="center-block member_logo {{ .Params.provider }}"></div>
+                </a>
+            </div>
+            
             <div class="product_name">{{ .Title }}</div>
             <div class="product_desc">{{ .Content }}</div>
+            
+            <div class="getting_started">
+              Getting started
+              <ul>
+                <li><a href="#">Datasheet</a></li>
+                <li><a href="#">Tutorial</a></li>
+              </ul>
+            </div>
+
             <div class="product_compat_list">
               Compatible with
               <ul>
@@ -141,9 +150,11 @@
                 {{ end }}
               </ul>
             </div>
+
             <a href="#">
               <button class="product_buyit btn btn-info XXXcenter-block">Buy it</button>
             </a>
+
           </div>
           {{ end }}
 
