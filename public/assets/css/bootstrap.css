@@ -4506,9 +4506,37 @@ main.main {
     main.main #hw-intro img {
       max-height: 180px; }
   main.main .product {
-    border-right: solid #f2f2f3 1px; }
+    border-right: solid #f2f2f3 1px;
+    margin-bottom: 32px; }
+    main.main .product a:hover, main.main .product a:visited, main.main .product a:link, main.main .product a:active {
+      text-decoration: none;
+      color: #58595b; }
     main.main .product .product_img {
       padding-bottom: 1em; }
+      main.main .product .product_img .zoom {
+        position: relative;
+        width: 250px;
+        margin-top: -250px;
+        margin-bottom: 195px;
+        visibility: hidden;
+        opacity: 0.5;
+        text-align: right;
+        padding-right: 16px;
+        padding-top: 8px;
+        font-size: 24px; }
+      main.main .product .product_img .member_logo {
+        position: relative;
+        width: 250px;
+        background-repeat: no-repeat;
+        background-position: right 10px bottom;
+        background-size: contain;
+        height: 32px;
+        margin-top: -38px;
+        margin-bottom: 16px; }
+        main.main .product .product_img .member_logo.eurotech {
+          background-image: url(/assets/images/members/logo-eurotech.png); }
+        main.main .product .product_img .member_logo.sierra {
+          background-image: url(/assets/images/members/logo-sierra.png); }
     main.main .product .product_name {
       font-size: 1.2em;
       font-weight: 700; }

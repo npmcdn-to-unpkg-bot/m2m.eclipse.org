@@ -401,9 +401,50 @@ main.main {
 
     .product {
         border-right: solid lighten($gray,60%) 1px;
+        margin-bottom: 32px;
+
+        a:hover, a:visited, a:link, a:active
+        {
+            text-decoration: none;
+            color: $gray;
+        }
 
         .product_img {
             padding-bottom: 1em;
+
+            .zoom {
+                position: relative;
+                width: 250px;
+                margin-top: -250px;
+                margin-bottom: 250px - 55px;
+                visibility: hidden;
+                opacity: 0.5;
+                text-align: right;
+                padding-right: 16px;
+                padding-top: 8px;
+
+                font-size: 24px;
+            }
+
+            .member_logo {
+                position: relative;
+                width: 250px;
+                background-repeat: no-repeat;
+                background-position: right 10px bottom;
+                background-size: contain;
+                height: 32px;
+                margin-top: -38px;
+                margin-bottom: 16px;
+
+                &.eurotech {
+                    background-image: url(/assets/images/members/logo-eurotech.png);
+                }
+
+                &.sierra {
+                    background-image: url(/assets/images/members/logo-sierra.png);
+                }
+
+            }
         }
 
         .product_name {
